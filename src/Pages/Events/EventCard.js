@@ -6,6 +6,7 @@ import { mapPinSymbol, clockSymbol } from '../Overview/SVG';
 function EventCard(props) {
   const {
     title,
+    description,
     eventDate,
     eventLocation,
     startTime,
@@ -25,19 +26,21 @@ function EventCard(props) {
         className='event-image'
         src={imageURL} alt=''
       />
+      <div className='event-text-block'>
       <Row className='event-title'>{title}</Row>
-      <Row className='event-date'>
-        {clockSymbol()}
-        {' '}
-        {getDateWithSlashes(eventDate.slice(0, 10))} {startTime} -
-        {' '}
-        {endTime}
-      </Row>
-      <Row className='event-location'>
-        {mapPinSymbol()}
-        {' '}
-        {eventLocation}
-      </Row>
+      <div className='event-info'>
+        <Row style= {{marginRight:'0px'}}> {description}  {' '}</Row>
+        <Row> <b>DATE </b>
+          : {getDateWithSlashes(eventDate.slice(0, 10))} 
+        </Row>
+        <Row ><b>TIME </b> {' '} : {startTime} - {' '} {endTime} </Row>
+        <Row>
+          <b>LOCATION </b>
+          : {' '}
+          {eventLocation}
+        </Row>
+      </div>
+      </div>
     </button>
   );
 }
