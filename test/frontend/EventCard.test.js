@@ -38,7 +38,7 @@ describe('<EventCard />', () => {
       `${getDateWithSlashes(appProps.eventDate)}`
     );
   });
-  
+
   it('Should render the time of the event', () => {
     const wrapper = mount(<EventCard {...appProps} />);
     expect(
