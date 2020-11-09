@@ -26,17 +26,17 @@ function EventCard(props) {
         src={imageURL} alt=''
       />
       <div className='event-text-block'>
-        <Row className='event-title'>{title}</Row>
         <div className='event-info'>
-          <Row style= {{marginRight:'0px'}}> {description}</Row>
-          <Row><b>DATE </b>
+          <div className='event-title'>{title}</div>
+          <div> {description}</div>
+          <div><b>DATE </b>
             : {getDateWithSlashes(eventDate.slice(0, 10))}
-          </Row>
-          <Row><b>TIME </b>: {startTime} - {endTime}</Row>
-          <Row>
+          </div>
+          <div><b>TIME </b>: {startTime} - {endTime}</div>
+          <div>
             <b>LOCATION </b>
             : {eventLocation}
-          </Row>
+          </div>
         </div>
       </div>
     </button>

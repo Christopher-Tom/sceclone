@@ -32,6 +32,15 @@ export async function getAllEvents() {
   return status;
 }
 
+// export async function getFilteredEvents(events, currDate) {
+//   let filteredEvents = events.filter((item) => {
+//       if (currDate < item.eventDate) {
+//         return(true);
+//       }
+//   });
+//   return filteredEvents;
+// }
+
 /**
  * Handles the case in which the image URL is not valid
  * @param {string} url an image url to be added to an event
