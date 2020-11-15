@@ -27,6 +27,8 @@ import PrintingAnalytics from './Pages/PrintingAnalytics/PrintingAnalytics.js';
 import { membershipState } from './Enums';
 import UploadPic from './Pages/UploadPic/UploadPic.js';
 
+import DoorCode from './Pages/DoorCode/DoorCode.js';
+
 export default function Routing({ appProps }) {
   const userIsAuthenticated = appProps.authenticated;
   const userIsMember =
@@ -115,6 +117,13 @@ export default function Routing({ appProps }) {
       path: '/uploadPic',
       allowedIf: userIsOfficerOrAdmin,
       redirect: '/login',
+      inAdminNavbar: true
+    },
+    {
+      Component: DoorCode,
+      path: '/doorcode',
+      allowedIf: userIsOfficerOrAdmin,
+      redirect: '/',
       inAdminNavbar: true
     }
   ];
